@@ -19,7 +19,7 @@ const Portfolio = () => {
           </li>
         </ul>
 
-        <div className="grid grid-cols-3 gap-7">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-7">
           <img src="/container1.png" alt="" className="w-full" />
           <img src="/Container 2.png" alt="" className="w-full" />
           <img src="/Container 3.png" alt="" className="w-full" />
