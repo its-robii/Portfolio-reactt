@@ -47,11 +47,11 @@ const BlogBanner = () => {
             <p className="text-secondery font-primary font-normal text-base">
               Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
               nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing
+              condimentum rhoncus, <span className="">sem quam semper libero, sit amet adipiscing
               sem neque sed ipsum.Etiam ultricies nisi vel augue. Curabitur
               ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
               tempus, tellus eget condimentum rhoncus, sem quam semper libero,
-              sit amet adipiscing sem neque sed ipsum.
+              sit amet adipiscing sem neque sed ipsum.</span>
             </p>
           </div>
         </div>
@@ -285,33 +285,33 @@ const BlogBanner = () => {
       </section>
 
       <section>
-        <div className="container grid grid-cols-12">
-          <div className="col-span-9 w-fit">
+        <div className="container grid sm:grid-cols-12">
+          <div className="sm:col-span-9 w-fit">
             <h2 className="pt-[72px] pb-[18px] border-y-2 mb-6 text-primary text-4xl font-primary font-semibold">
               Leave a Reply
             </h2>
-            <p className="text-secondery text-lg font-primary font-normal pb-6">
+            <p className="text-secondery text-lg font-primary font-normal pb-6 w-fit">
               Your email address will not be published. Required fields are
               marked *
             </p>
             <div>
-              <input placeholder="" className="h-52 w-full border-2 mb-8" />
+              <input placeholder="" className="h-52 w-fit border-2 mb-8" />
             </div>
-            <div className="flex gap-8 mb-9">
+            <div className=" flex flex-col sm:flex-row gap-8 mb-9 w-fit">
               <input
                 placeholder="Name*"
                 type="text"
-                className="py-3 pl-4 pr-36 border-2 placeholder:"
+                className="py-3 pl-4   sm:pr-36 border-2 placeholder:"
               />
               <input
                 placeholder="Email*"
                 type="text"
-                className="py-3 pl-4 pr-36 border-2 placeholder:"
+                className="py-3 pl-4  sm:pr-36 border-2 placeholder:"
               />
               <input
                 placeholder="Website"
                 type="text"
-                className="py-3 pl-4 pr-36 border-2 placeholder:"
+                className="py-3 pl-4  sm:pr-36 border-2 placeholder:"
               />
             </div>
             <button className="py-3 px-7 bg-black text-white mb-[60px]">
