@@ -1,92 +1,93 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBarsStaggered } from "react-icons/fa6";
-
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-      <header className={`flex w-full items-center bg-white dark:bg-dark`}>
-      <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
-          <div className="w-60 max-w-full px-4">
-            <a href="/#" className="block w-full py-5">
-              <img
-               src="/logo.png.png"
-                alt="logo"
-                className="dark:hidden"
-              />
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-white.svg"
-                alt="logo"
-                className="hidden dark:block"
-              />
-            </a>
-          </div>
-          <div className="flex w-full items-center justify-between px-4">
+    <nav>
+          <div className="container py-5 flex items-center justify-between">
+            <div>
+              <Link to="/">
+                <img src="/logo.png.png" alt="logo" />
+              </Link>
+            </div>
+    
             <div>
               <button
-                onClick={() => setOpen(!open)}
-                id="navbarToggler"
-                className={` ${
-                  open && "navbarTogglerActive"
-                } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+                className="md:hidden block"
+                onClick={toggleMenu}
+                aria-label="Toggle navigation"
               >
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color bg-black"></span>
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color bg-black"></span>
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color bg-black"></span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
               </button>
-              <nav
-                // :className="!navbarOpen && 'hidden' "
-                id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${
-                  !open && "hidden"
-                } `}
+    
+              <ul
+                className={`${
+                  isOpen ? "block" : "hidden"
+                } md:flex gap-10 font-medium font-primary text-primary md:items-center md:static absolute top-[90px] left-0 w-full bg-white md:bg-transparent`}
               >
-                <ul className="block lg:flex">
-                  <ListItem NavLink="/">Home</ListItem>
-                  <ListItem NavLink="/about">About</ListItem>
-                  <ListItem NavLink="/portfoliosingle">Portfolio Layouts</ListItem>
-                  <ListItem NavLink="/layouts">Portfolio Single</ListItem>
-                  <ListItem NavLink="/blog">Blog</ListItem>
-                </ul>
-              </nav>
-            </div>
-            <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <a
-                href="/#"
-                className="px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-white"
-              >
-                Sign in
-              </a>
-
-              <a
-                href="/#"
-                className="rounded-md bg-primary px-7 py-3 text-base font-medium text-white hover:bg-primary/90"
-              >
-                Sign Up
-              </a>
+                <li>
+                  <Link
+                    to="/"
+                    className="block md:inline transition-all hover:text-slate-400 py-2 md:py-0"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="block md:inline transition-all hover:text-slate-400 py-2 md:py-0"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/layouts"
+                    className="block md:inline transition-all hover:text-slate-400 py-2 md:py-0"
+                  >
+                    Portfolio Layouts
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/portfoliosingle"
+                    className="block md:inline transition-all hover:text-slate-400 py-2 md:py-0"
+                  >
+                    Portfolio Single
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/blog"
+                    className="block md:inline transition-all hover:text-slate-400 py-2 md:py-0"
+                  >
+                    Blog
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </header>
+        </nav>
   );
 };
 
 export default Navbar;
-
-
-const ListItem = ({ children, NavLink }) => {
-  return (
-    <>
-      <li>
-        <a
-          href={NavLink}
-          className="flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white lg:ml-12 lg:inline-flex"
-        >
-          {children}
-        </a>
-      </li>
-    </>
-  );
-};
