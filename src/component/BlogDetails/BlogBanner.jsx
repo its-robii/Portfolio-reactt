@@ -51,7 +51,7 @@ const BlogBanner = () => {
               sem neque sed ipsum.Etiam ultricies nisi vel augue. Curabitur
               ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
               tempus, tellus eget condimentum rhoncus, sem quam semper libero,
-              sit amet adipiscing sem neque sed ipsum.</span>
+              sit amet adipiscing </span>
             </p>
           </div>
         </div>
